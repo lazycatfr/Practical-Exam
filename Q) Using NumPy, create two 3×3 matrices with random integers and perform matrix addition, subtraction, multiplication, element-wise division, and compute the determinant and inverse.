@@ -1,0 +1,38 @@
+import numpy as np
+
+# Creating two random 3x3 matrices (values between 1 and 10)
+A = np.random.randint(1, 10, (3, 3))
+B = np.random.randint(1, 10, (3, 3))
+
+print("Matrix A:")
+print(A, "\n")
+
+print("Matrix B:")
+print(B, "\n")
+
+# Matrix Operations
+add_result = A + B
+sub_result = A - B
+mul_result = np.dot(A, B)  # Matrix multiplication
+div_result = A / B  # Element-wise division
+
+print("Addition (A+B):")
+print(add_result, "\n")
+
+print("Subtraction (A-B):")
+print(sub_result, "\n")
+
+print("Multiplication (AxB):")
+print(mul_result, "\n")
+
+print("Element-wise Division (A/B):")
+print(div_result, "\n")
+
+# Determinant and Inverse of Matrix A
+det_A = np.linalg.det(A)
+inv_A = np.linalg.inv(A)
+
+print("Determinant of A:", det_A, "\n")
+
+print("Inverse of A:")
+print(inv_A)
