@@ -1,0 +1,38 @@
+import pandas as pd
+
+# Sample DataFrames
+df1 = pd.DataFrame({
+    'ID': [1, 2, 3, 4],
+    "Name": ["Alice", "Bob", "Charlie", "David"]
+})
+
+df2 = pd.DataFrame({
+    "ID": [3, 4, 5, 6],
+    "Salary": [70000, 80000, 65000, 90000]
+})
+
+print("DataFrame 1:")
+print(df1, "\n")
+
+print("DataFrame 2:")
+print(df2, "\n")
+
+# Inner Join
+inner_join = pd.merge(df1, df2, on='ID', how="inner")
+print("Inner Join:")
+print(inner_join, "\n")
+
+# Outer Join
+outer_join = pd.merge(df1, df2, on='ID', how="outer")
+print("Outer Join:")
+print(outer_join, "\n")
+
+# Left Join
+left_join = pd.merge(df1, df2, on='ID', how="left")
+print("Left Join:")
+print(left_join, "\n")
+
+# Right Join
+right_join = pd.merge(df1, df2, on='ID', how="right")
+print("Right Join:")
+print(right_join)
