@@ -1,0 +1,31 @@
+import pandas as pd
+
+# Sample dataset (You can replace it using read_csv('data.csv'))
+df = pd.DataFrame({
+    'name': ['Alice', 'Bob', 'Carol'],
+    'math': [80, 90, 85],
+    'science': [88, 92, 79]
+})
+
+print("Original DataFrame:")
+print(df, "\n")
+
+# Add a new calculated column Total Marks
+df['total'] = df['math'] + df['science']
+print("After adding 'total' column:")
+print(df, "\n")
+
+# Rename columns
+df = df.rename(columns={'math': 'Mathematics', 'science': 'Science'})
+print("After renaming columns:")
+print(df, "\n")
+
+# Change data type of 'total' column to float
+df['total'] = df['total'].astype(float)
+print("After changing data type of 'total':")
+print(df.dtypes, "\n")
+
+# Drop an unnecessary column
+df = df.drop(columns=['Science'])
+print("After dropping 'Science' column:")
+print(df)
