@@ -1,0 +1,22 @@
+import numpy as np
+
+# Generate a random dataset of 1000 values
+data = np.random.randn(1000)  # Normally distributed data
+
+print("Dataset (first 10 values):")
+print(data[:10], "\n")  # Show sample
+
+# Statistical calculations
+mean_val = np.mean(data)
+median_val = np.median(data)
+variance_val = np.var(data)
+std_val = np.std(data)
+min_val = np.min(data)
+max_val = np.max(data)
+
+print("Mean:", mean_val)
+print("Median:", median_val)
+print("Variance:", variance_val)
+print("Standard Deviation:", std_val)
+print("Minimum:", min_val)
+print("Maximum:", max_val)
