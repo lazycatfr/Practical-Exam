@@ -1,0 +1,45 @@
+import pandas as pd
+
+# Create sample time-series dataset
+data = {
+    'date': ['2025-01-01', '2025-01-02', '2025-01-03', '2025-01-04', '2025-01-05'],
+    'sales': [120, 150, 130, 170, 160]
+}
+
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df, "\n")
+
+# Convert column to DateTime
+df['date'] = pd.to_datetime(df['date'])
+
+print("Data types after conversion:")
+print(df.dtypes, "\n")
+
+# Set Date as index (very useful for time-series)
+df.set_index('date', inplace=True)
+
+print("DataFrame with Date as index:")
+print(df, "\n")
+
+# Extract DateTime Features
+df['year'] = df.index.year
+df['month'] = df.index.month
+df['day'] = df.index.day
+df['weekday'] = df.index.day_name()
+
+print("With extracted DateTime features:")
+print(df, "\n")
+
+# Resampling Weekly Summary
+weekly_summary = df['sales'].resample('W').sum()
+
+print("Weekly Sales Summary:")
+print(weekly_summary, "\n")
+
+# Rolling Mean (Moving Average)
+df['rolling_mean_3'] = df['sales'].rolling(window=3).mean()
+
+print("With 3-day Rolling Mean:")
+print(df)
